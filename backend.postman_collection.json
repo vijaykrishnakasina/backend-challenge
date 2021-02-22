@@ -1,0 +1,162 @@
+{
+	"variables": [],
+	"info": {
+		"name": "backend",
+		"_postman_id": "5abe9d70-bbbd-653c-1ec2-690bd4ec1f88",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "healthCheck",
+			"request": {
+				"url": "localhost:8080/",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "add enrolee",
+			"request": {
+				"url": "localhost:8080/enrolees",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n\t\"name\": \"vijay\",\n\t\"birthDate\": \"22/07/1997\",\n\t\"activationStatus\": false,\n\t\"phoneNumber\" : \"0192000390\",\n\t\"dependents\" : [\n\t\t{\n\t\t\t\"name\":\"dep1\",\n\t\t\t\"birthDate\": \"22/07/1997\" \n\t\t}\t\n\t]\n}\t\n\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "update enrolee",
+			"request": {
+				"url": "localhost:8080/enrolees/5",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\"enrolee_id\": 5,\n\t\"name\": \"vijayaaa\",\n\t\"birthDate\": \"22/07/1997\",\n\t\"activationStatus\": false,\n\t\"phoneNumber\" : \"0192000390\",\n\t\"dependents\" : [\n\t\t{\n\t\t\t\"name\":\"dep1\",\n\t\t\t\"birthDate\": \"22/07/1997\" \n\t\t}\t\n\t]\n}\t\n\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "getEnrolee",
+			"request": {
+				"url": "localhost:8080/enrolees/1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n{\n\t\"name\": \"vijay\",\n\t\"birthDate\": \"22/07/1997\",\n\t\"activationStatus\": false,\n\t\"phoneNumber\" : \"0192000390\"\n}\t\n]\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "getDependent",
+			"request": {
+				"url": "localhost:8080/enrolees/1/dependents/2",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n{\n\t\"name\": \"vijay\",\n\t\"birthDate\": \"22/07/1997\",\n\t\"activationStatus\": false,\n\t\"phoneNumber\" : \"0192000390\"\n}\t\n]\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "update dependent",
+			"request": {
+				"url": "localhost:8080/enrolees/1/dependents/2",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"dependent_id\": 2,\n    \"name\": \"kasina\",\n    \"birthDate\": \"0027/12/18\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "add dependent",
+			"request": {
+				"url": "localhost:8080/enrolees/1/dependents",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \n    \"name\": \"dep12\",\n    \"birthDate\": \"0027/12/18\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "delete dependen",
+			"request": {
+				"url": "localhost:8080/enrolees/1/dependents/3",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \n    \"name\": \"dep12\",\n    \"birthDate\": \"0027/12/18\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
